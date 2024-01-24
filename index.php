@@ -54,28 +54,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     <?php include("includes/nav.php"); ?>
     
     <main>
-    <h2 class="title">Blog Posts</h2>
-    <div class="blog-container">
-    <ul>
-        <?php foreach ($PostedBlogs as $blog) : ?>
-            <li>
-                <strong>Blog title:</strong> <?= $blog['title'] ?><br><br>
-                <?= $blog['content'] ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</div>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" id="title" required><br>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="title">Title:</label><br>
-        <input type="text" name="title" id="title" required><br>
+            <label for="text">Blog Post:</label><br>
+            <textarea name="text" id="text" rows="4" cols="50" required></textarea><br>
 
-        <label for="text">Blog Post:</label><br>
-        <textarea name="text" id="text" rows="4" cols="50" required></textarea><br>
-
-        <input type="submit" value="Submit">
-    </form>
-</main>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
 <?php include("includes/footer.php"); ?>
 </body>
 </html>

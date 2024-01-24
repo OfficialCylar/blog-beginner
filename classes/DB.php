@@ -4,7 +4,7 @@
 
 class DB 
 {
-    private PDO $db;
+    protected PDO $db;
     public string $username;
     public string $password;
     
@@ -93,7 +93,7 @@ class DB
     
     public function FetchBlogs()
     {
-        $collect = $this->db->query("SELECT title, content FROM blogs");
+        $collect = $this->db->query("SELECT id, title, content FROM blogs");
         return $collect->fetchAll(PDO::FETCH_ASSOC);
     }
 }

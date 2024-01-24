@@ -201,7 +201,6 @@ main {
 
 .message-form label {
     margin-right: 10px;
-
 }
 
 
@@ -242,6 +241,7 @@ footer {
   display: flex;
   align-items: center;
   border-top: 1px solid gray;
+  
 }
 
 .left-icon {
@@ -297,6 +297,26 @@ footer {
   background-color: white;
 }
 
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));  
+  grid-gap: 20px;  
+  padding: 20px;  
+}
+
+.blog-post {
+  background: #f9f9f9;  
+  border: 1px solid lightskyblue;  
+  padding: 20px;  
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);  
+}
+
+.blog-post h3 {
+  color: red;
+}
+
+.blog-post p {
+  color: orange;
+}
 
 /* This is for page 2 for account navigation */
-
